@@ -111,7 +111,21 @@ function setUp() {
     splashLeft.classList.add("active");
     splashRight.classList.add("active");
     progressBar.classList.add("complete");
+    loading = false;
   }, 6000);
 }
 
+function percantageTracker() {
+  if (loading) {
+    let { height, top } = progressBar.getBoundingClientRect();
+    let p = Math.ceil((height / window.innerHeight) * 100);
+    percentage.textContent = `${p}%`;
+    percentage.style.transform = `translateY(calc(${
+      top - window.innerHeight
+    }px))`;
+    requestAnimationFrame(percantageTracker);
+  }
+}
+
 setUp();
+percantageTracker();
