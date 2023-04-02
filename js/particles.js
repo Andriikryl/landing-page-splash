@@ -83,3 +83,35 @@ function animate() {
 }
 
 animate();
+
+const splashScreen = document.querySelector(".splash__screen");
+const splashLeft = document.querySelector(".left");
+const splashRight = document.querySelector(".right");
+const progressBar = document.querySelector(".prograss__bar");
+const percentage = document.querySelector(".perrcentage");
+
+let loading = true;
+
+window.addEventListener("resize", setDimantons);
+
+// setDimantons();
+// animate();
+
+function setUp() {
+  setTimeout(() => {
+    progressBar.style.height = "40%";
+  }, 2000);
+  setTimeout(() => {
+    progressBar.style.height = "80%";
+  }, 4000);
+  setTimeout(() => {
+    progressBar.style.height = "100%";
+  }, 5000);
+  setTimeout(() => {
+    splashLeft.classList.add("active");
+    splashRight.classList.add("active");
+    progressBar.classList.add("complete");
+  }, 6000);
+}
+
+setUp();

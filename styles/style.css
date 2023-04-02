@@ -171,9 +171,9 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    height: 50%;
-    width: 1px;
-    background-color: black;
+    height: 0%;
+    width: 3px;
+    background-color: #ccd5ae;
     transition: height 1s;
   }
 
@@ -182,5 +182,7 @@
   }
 
   .perrcentage{
-    
+    position: absolute;
+    bottom: 0;
+    left: 1rem;
   }
